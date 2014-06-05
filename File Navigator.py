@@ -283,7 +283,7 @@ class FileNavigatorCommand(sublime_plugin.WindowCommand):
 		# Reset FileNavigatorCommand
 		self.cls.reset()
 
-		self.window.open_file(path)
+		sublime.set_timeout(lambda: self.window.open_file(path, sublime.ENCODED_POSITION), 0)
 
 	def do_open_folder(self, path):
 
